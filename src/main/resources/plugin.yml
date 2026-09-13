@@ -1,0 +1,17 @@
+name: PlHidePlus
+version: 1.0.0
+main: com.itskillmaster.plhideplus.PlHidePlus
+api-version: "1.13"
+author: Itskillmaster
+description: Advanced plugin hider with GUI control panel, command blocking, and tab-completion prevention.
+website: https://github.com/Itskillmaster/plhideplus
+
+permissions:
+  plhideplus.use:
+    description: Allows access to /plhideplus command and update notifications
+    default: op
+
+commands:
+  plhideplus:
+    description: Open the PlHidePlus control panel GUI
+    usage: /plhideplus

@@ -1,0 +1,80 @@
+# PlHidePlus Configuration
+# Advanced plugin hider with GUI control panel
+
+# List of blocked commands (case-insensitive)
+# These commands will be blocked and tab-completion will be disabled
+blocked-commands:
+  - "pl"
+  - "plugins"
+  - "?"
+  - "bukkit:?"
+  - "about"
+  - "version"
+  - "ver"
+  - "bukkit:pl"
+  - "bukkit:plugins"
+  - "bukkit:version"
+  - "bukkit:about"
+
+# Custom deny message sent to players when they use a blocked command
+# Supports MiniMessage format (e.g., <red>, <gold>, <gradient:#FF0000:#00FF00>)
+# Placeholders: {command} - the blocked command used
+deny-message: "<red>You Dont Have Access!</red>"
+
+# GUI Settings
+gui:
+  title: "<gradient:#FF6B6B:#4ECDC4><bold>PlHidePlus Control Panel</bold></gradient>"
+  size: 54
+  # Item settings for the GUI
+  items:
+    blocked-commands:
+      material: "COMMAND_BLOCK"
+      name: "<gradient:#FF6B6B:#EE5A5A><bold>Blocked Commands</bold></gradient>"
+      lore:
+        - "<gray>View and manage blocked commands</gray>"
+        - ""
+        - "<yellow>Left-click:</yellow> <white>View list</white>"
+        - "<yellow>Right-click:</yellow> <white>Add new command</white>"
+        - ""
+        - "<green>Currently blocking: <white>%count% commands</white></green>"
+      slot: 11
+    deny-message:
+      material: "PAPER"
+      name: "<gradient:#4ECDC4:#44A08D><bold>Deny Message</bold></gradient>"
+      lore:
+        - "<gray>Edit the message shown when</gray>"
+        - "<gray>a blocked command is used</gray>"
+        - ""
+        - "<yellow>Left-click:</yellow> <white>View current message</white>"
+        - "<yellow>Right-click:</yellow> <white>Edit message</white>"
+        - ""
+        - "<gray>Current: <white>%preview%</white></gray>"
+      slot: 13
+    reload:
+      material: "REDSTONE"
+      name: "<gradient:#FFD93D:#FF6B6B><bold>Reload Configuration</bold></gradient>"
+      lore:
+        - "<gray>Reload all settings from config.yml</gray>"
+        - ""
+        - "<yellow>Click to reload</yellow>"
+      slot: 15
+    info:
+      material: "ENCHANTED_BOOK"
+      name: "<gradient:#6BCB77:#4ECDC4><bold>Plugin Information</bold></gradient>"
+      lore:
+        - "<gray>Version: <white>%version%</white></gray>"
+        - "<gray>Author: <white>Itskillmaster</white></gray>"
+        - "<gray>GitHub: <white>github.com/Itskillmaster/plhideplus</white></gray>"
+        - ""
+        - "<green>Status: <white>Running</white></green>"
+      slot: 31
+
+# Update Checker Settings
+update-checker:
+  enabled: true
+  # GitHub repository for update checking
+  repository: "Itskillmaster/plhideplus"
+  # Notify players with permission on join
+  notify-on-join: true
+  # Check interval in minutes (0 = only on startup)
+  check-interval: 60
